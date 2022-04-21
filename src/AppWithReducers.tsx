@@ -70,8 +70,8 @@ function AppWidthReducers() {
     }
 
     function addTodolist(title: string) {
-        dispatchToTodolistsReducer(addTodolistAC(title))
-        dispatchToTasksReducer(addTodolistAC(title))
+       // dispatchToTodolistsReducer(addTodolistAC(title))
+        //dispatchToTasksReducer(addTodolistAC(title))
     }
 
     return (
