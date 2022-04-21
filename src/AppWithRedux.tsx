@@ -1,7 +1,6 @@
-import React, {useReducer} from 'react';
+import React from 'react';
 import './App.css';
 import {Todolist} from './Todolist';
-import {v1} from 'uuid';
 import {AddItemForm} from './AddItemForm';
 import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography} from '@material-ui/core';
 import {Menu} from '@material-ui/icons';
@@ -10,9 +9,8 @@ import {
     changeTodolistFilterAC,
     changeTodolistTitleAC,
     removeTodolistAC,
-    todolistsReducer
 } from './state/todolists-reducer';
-import {addTaskAC, changeStatusAC, changeTitleAC, removeTaskAC, tasksReducer} from './state/tasks-reducer';
+import {addTaskAC, changeStatusAC, changeTitleAC, removeTaskAC} from './state/tasks-reducer';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppRootState} from './state/store';
 import {TasksStateType, TodolistType} from './App';
@@ -60,8 +58,7 @@ function AppWidthRedux() {
     }
 
     function addTodolist(title: string) {
-        const id = v1();
-        dispatch(addTodolistAC(title, id))
+        dispatch(addTodolistAC(title))
     }
 
     return (
